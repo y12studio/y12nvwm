@@ -6,16 +6,17 @@ WP_PLUGINS="varnish-http-purge getty-images"
 # wp-admin password
 #
 openssl rand -base64 6 | tr -d '+=/' > /user.txt
-openssl rand -base64 12 > /pass.txt
+openssl rand -base64 15 | tr -d '+=/' > /pass.txt
 WP_USER=`cat /user.txt`
 WP_PASS=`cat /pass.txt`
-wp core install --user=${WP_USER} --allow-root --url="${WP_URL}" --title="${WP_TITLE}" --admin_user="${WP_USER}" --admin_password="${WP_PASS}" --admin_email="user@example.org"
-wp core language install zh_TW --user=${WP_USER} --allow-root --activate
+wp core install --allow-root --url="${WP_URL}" --title="${WP_TITLE}" --admin_user="${WP_USER}" --admin_password="${WP_PASS}" --admin_email="user@example.org"
+wp core update --allow-root
+wp core language install zh_TW --allow-root --activate
 for name in ${WP_PLUGINS}
 do
-    wp plugin install ${name} --user=${WP_USER} --activate --allow-root
+    wp plugin install ${name} --activate --allow-root
 done
-
+chown -R www-data:www-data /var/www/html
 echo ""
 echo "=========================================================="
 echo "wp-admin user : ${WP_USER}"
