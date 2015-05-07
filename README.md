@@ -8,3 +8,9 @@ $ wget -qO- https://get.docker.com/ | sh
 $ wget -qO- https://raw.githubusercontent.com/y12studio/y12nvwm/master/install.sh | sh
 $ sudo reboot now
 ```
+
+wp-cli
+```
+$ wp2sh
+# /install.sh
+```

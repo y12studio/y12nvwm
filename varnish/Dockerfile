@@ -1,18 +1,6 @@
-FROM        ubuntu:14.04.1
+FROM jacksoncage/varnish
 
-RUN apt-get update -qq && \
-  apt-get upgrade -yqq && \
-  apt-get -yqq install varnish && \
-  apt-get -yqq clean
-
-# Make our custom VCLs available on the container
-ADD wp.vcl /etc/varnish/default.vcl
-
-ENV VARNISH_PORT 80
-
-# Expose port 80
-EXPOSE 80
-
+ADD default.vcl /etc/varnish/default.vcl
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
 CMD ["/start.sh"]

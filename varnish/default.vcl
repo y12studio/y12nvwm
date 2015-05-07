@@ -1,6 +1,6 @@
 backend default {
-  .host = "{VARNISH_BACKEND_HOST}";
-  .port = "{VARNISH_BACKEND_PORT}";
+  .host = "Y_VARNISH_BACKEND_HOST";
+  .port = "Y_VARNISH_BACKEND_PORT";
 }
 
 sub vcl_recv {

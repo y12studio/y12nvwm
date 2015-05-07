@@ -15,26 +15,19 @@ echo 'DOCKER_OPTS="--bip=172.17.42.1/24 --dns 172.17.42.1 --dns 8.8.8.8 --dns 8.
 # install docker-compose
 #
 sudo add-apt-repository ppa:nginx/development
-sudo apt-get update && apt-get install -yq python-pip git nginx
+sudo apt-get update && apt-get install -yq python-pip git
 sudo pip install -U docker-compose
 #
 # install y12nvwm
 #
 cd /home/xuser && git clone https://github.com/y12studio/y12nvwm.git && mkdir -p databox/html databox/mysql
 #
-# insall nginx
-#
-sudo /home/xuser/nginx/nvwm.conf /etc/nginx/sites-available/
-sudo ln -s /etc/nginx/sites-available/nvwm.conf /etc/nginx/sites-enabled/
-sudo rm /etc/nginx/sites-enabled/default
-
-#
 # CraftThatBlock/SwapUbuntu
 # https://github.com/CraftThatBlock/SwapUbuntu
 #
 # Setup variables
-# SWAP_SIZE=1G
-SWAP_SIZE="512M"
+# SWAP_SIZE=512M
+SWAP_SIZE="1G"
 SWAP_PATH="/swapfile"
 
 
