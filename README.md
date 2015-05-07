@@ -6,7 +6,8 @@ Install on DigitalOcean/DreamCompute
 # su - xuser
 $ wget -qO- https://get.docker.com/ | sh
 $ sudo usermod -aG docker xuser
-$ wget -qO- https://raw.githubusercontent.com/y12studio/y12nvwm/master/install.sh | sh
+$ git clone https://github.com/y12studio/y12nvwm.git
+$ cd y12nvwm && chmod +x install.sh && ./install.sh
 $ sudo reboot now
 ```
 

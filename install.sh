@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Messages
 echo "=========================================================="
@@ -15,10 +15,6 @@ echo 'DOCKER_OPTS="--bip=172.17.42.1/24 --dns 172.17.42.1 --dns 8.8.8.8 --dns 8.
 #
 sudo apt-get install -yq python-pip git
 sudo pip install -U docker-compose
-#
-# install y12nvwm
-#
-cd ~/ && git clone https://github.com/y12studio/y12nvwm.git
 #
 # CraftThatBlock/SwapUbuntu
 # https://github.com/CraftThatBlock/SwapUbuntu
