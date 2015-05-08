@@ -37,7 +37,7 @@ mariadb:
         - MYSQL_ROOT_PASSWORD=1234
 
 varnish:
-    build: varnish
+    image: y12docker/varnish:4.0.3
     links:
         - wordpress
     environment:

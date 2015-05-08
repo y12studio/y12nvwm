@@ -10,12 +10,16 @@ openssl rand -base64 15 | tr -d '+=/' > /pass.txt
 WP_USER=`cat /user.txt`
 WP_PASS=`cat /pass.txt`
 wp core install --allow-root --url="${WP_URL}" --title="${WP_TITLE}" --admin_user="${WP_USER}" --admin_password="${WP_PASS}" --admin_email="user@example.org"
-wp core update --allow-root
 wp core language install zh_TW --allow-root --activate
+#
 for name in ${WP_PLUGINS}
 do
     wp plugin install ${name} --activate --allow-root
 done
+#
+wp theme install minamaze --activate --allow-root
+#
+wp core update --allow-root
 chown -R www-data:www-data /var/www/html
 echo ""
 echo "=========================================================="
