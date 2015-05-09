@@ -20,7 +20,7 @@ wordpress:
     volumes:
         - databox/html/:/var/www/html/
     environment:
-        - WORDPRESS_DB_PASSWORD=zoPt1iRZLm1eQ
+        - WORDPRESS_DB_PASSWORD=1234
         - SERVICE_NAME=wp
         - Y_INSTALL_HOST=localhost
     ports:
@@ -31,7 +31,7 @@ mariadb:
     volumes:
         - databox/mysql/:/var/lib/mysql/
     environment:
-        - MYSQL_ROOT_PASSWORD=zoPt1iRZLm1eQ
+        - MYSQL_ROOT_PASSWORD=1234
 
 varnish:
     image: y12docker/varnish:4.0.3

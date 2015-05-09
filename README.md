@@ -6,6 +6,8 @@ Install on DigitalOcean/Ubuntu 14.04 x64
 # su - xuser
 $ wget -qO- https://get.docker.com/ | sh
 $ sudo usermod -aG docker xuser
+$ exit
+# su - xuser
 $ git clone https://github.com/y12studio/y12nvwm.git
 $ cd y12nvwm && chmod +x install.sh && ./install.sh
 $ sudo reboot now
