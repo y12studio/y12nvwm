@@ -20,9 +20,9 @@ wordpress:
     volumes:
         - databox/html/:/var/www/html/
     environment:
-        - WORDPRESS_DB_PASSWORD=zoPt1iRZLm1eQ
+        - WORDPRESS_DB_PASSWORD=DC_DBPASS
         - SERVICE_NAME=wp
-        - Y_INSTALL_HOST=localhost
+        - Y_INSTALL_HOST=DC_EXTHOST
     ports:
         - 8280:80
 
@@ -31,7 +31,7 @@ mariadb:
     volumes:
         - databox/mysql/:/var/lib/mysql/
     environment:
-        - MYSQL_ROOT_PASSWORD=zoPt1iRZLm1eQ
+        - MYSQL_ROOT_PASSWORD=DC_DBPASS
 
 varnish:
     image: y12docker/varnish:4.0.3
@@ -50,7 +50,7 @@ nginx:
         - varnish
     environment:
         - SERVICE_NAME=nginx
-        - Y_NGINX_SERVER_NAME=localhost
+        - Y_NGINX_SERVER_NAME=DC_EXTHOST
         - Y_NGINX_SERVER_PORT=80
         - Y_VARNISH_HOST=varnish
         - Y_VARNISH_PORT=80
