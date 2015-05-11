@@ -8,16 +8,25 @@ $ wget -qO- https://get.docker.com/ | sh
 $ sudo usermod -aG docker xuser
 $ exit
 # su - xuser
-$ git clone https://github.com/y12studio/y12nvwm.git
-$ cd y12nvwm && chmod +x install.sh && ./install.sh
+$
+$ docker run -v $(pwd)/nvwm:/nvwm y12docker/nvwm:4.2.2
+$ cd nvwm && . ./post.sh
+$ ./host_swap.sh && ./host_dc.sh
 $ sudo reboot now
 ```
 wordpress setup
 -----
 ```
 # su - xuser
-$ cd y12nvwm && source alice.sh && dcsetup
+$ cd nvwm && source alias.sh
 $ dcup
 $ dc ps
 $ wp2sh /wpinstall.sh
+```
+
+build y12docker/nvwm
+--------------
+```
+$ docker build -t y12docker/nvwm:4.2.2 .
+$ docker push y12docker/nvwm:4.2.2
 ```

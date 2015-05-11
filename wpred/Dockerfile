@@ -1,4 +1,4 @@
-FROM wordpress:4.2.1
+FROM wordpress:4.2.2
 ADD mpm_event.conf mpm_prefork.conf mpm_worker.conf /etc/apache2/mods-available/
 #
 # install vp-cli
