@@ -11,7 +11,7 @@ $ exit
 $
 $ docker run -v $(pwd)/nvwm:/nvwm y12docker/nvwm:4.2.2
 $ cd nvwm && . ./post.sh
-$ ./host_swap.sh && ./host_dc.sh
+$ absh/setup_swap.sh && absh/setup_dc.sh
 $ sudo reboot now
 ```
 wordpress setup

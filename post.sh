@@ -8,8 +8,6 @@ for name in $(compgen -v DC_); do
 done
 source alias.sh
 echo ""
-echo "   ./host_swap.sh && ./host_dc.sh && sudo reboot now"
-echo ""
 echo "   dcup"
 echo "   wp2sh /wpinstall.sh"
 echo ""
